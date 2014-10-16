@@ -1,0 +1,471 @@
+ // Bourbon & Neat
+@import '../../bower_components/bourbon/dist/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+
+// Fonts
+$titlefont: 'Alegreya Sans SC', sans-serif;
+$font1: 'Noto Serif', serif;
+$font2: 'Sorts Mill Goudy', serif;
+// Custom Styles
+
+//HEADER
+header {
+  background: #D0D0D0;
+  width: 100%;
+}
+
+header h4 {
+  position: absolute;
+  top: 30px;
+  margin: 0 0 0 2%;
+  display: inline-block;
+  color: #979797;
+  font-family: $font1;
+  font-size: 20px;
+}
+
+header h1 {
+  display: inline-block;
+  margin-left: 42%;
+  font-family: $titlefont;
+  color: #5E5E5E;
+}
+
+//SIDEBAR
+
+.sidebar {
+  text-align: center;
+  padding-top: 60px;
+  height: 1500px;
+  width: 15%;
+  background: #E6E6E6;
+
+}
+
+.sidebar a {
+  text-decoration: none;
+}
+
+.sidebar h4 {
+  margin: 0;
+  font-family: $font2;
+  font-size: 25px;
+  color: #979797;
+
+}
+
+.dividers {
+  width: 50px;
+  border: solid #D2D2D2 1px;
+  margin: 0 auto;
+}
+
+// ==========================================================
+// HOME PAGE
+// ==========================================================
+
+//MY RECIPES
+
+.home-my-recipes {
+  position: absolute;
+  width: 75%;
+  top: 120px;
+  left: 15%;
+  margin-left: 65px;
+}
+
+.home-titles {
+  font-family: $font2;
+  font-size: 25px;
+  color: #979797;
+  display: inline-block;
+  margin: 0;
+}
+
+.home-divider {
+  display: inline-block;
+  width: 816px;
+  border: solid #D2D2D2 1px;
+  position: absolute;
+  margin-top: 17px;
+}
+
+.view-all {
+  display: inline-block;
+  position: relative;
+  float: right;
+  top: 7px;
+  right: 34px;
+  font-family: $font2;
+  font-size: 18px;
+  color: #979797;
+}
+
+.view-all span {
+  color: #5E5E5E;
+}
+
+.my-recipes-ul {
+  padding: 0;
+}
+
+.my-recipes-ul li {
+  height: 180px;
+  width: 180px;
+  background: #BFBFBF;
+  display: inline-block;
+  margin-right: 28px;
+}
+
+//PUBLIC RECIPES
+
+.home-public-recipes {
+  position: absolute;
+  width: 75%;
+  top: 420px;
+  left: 15%;
+  margin-left: 65px;
+}
+
+.public-recipes-ul {
+  padding: 0;
+}
+
+.public-recipes-ul li {
+  height: 180px;
+  width: 180px;
+  background: #BFBFBF;
+  display: inline-block;
+  margin-right: 28px;
+}
+
+//POPULAR RECIPES
+
+.home-popular-recipes {
+  position: absolute;
+  width: 75%;
+  top: 720px;
+  left: 15%;
+  margin-left: 65px;
+}
+
+.popular-recipes-ul {
+  padding: 0;
+}
+
+.popular-recipes-ul li {
+  height: 180px;
+  width: 180px;
+  background: #BFBFBF;
+  display: inline-block;
+  margin-right: 28px;
+}
+
+//FAVOURITE RECIPES
+
+.home-my-favourite {
+  position: absolute;
+  width: 75%;
+  top: 1020px;
+  left: 15%;
+  margin-left: 65px;
+}
+
+.favourites-ul {
+  padding: 0;
+}
+
+.favourites-ul li {
+  height: 180px;
+  width: 180px;
+  background: #BFBFBF;
+  display: inline-block;
+  margin-right: 28px;
+}
+
+//MY PANTRY
+
+.home-my-pantry {
+  position: absolute;
+  width: 75%;
+  top: 1320px;
+  left: 15%;
+  margin-left: 65px;
+}
+
+.my-pantry-ul {
+  padding: 0;
+}
+
+.my-pantry-ul li {
+  height: 180px;
+  width: 180px;
+  background: #BFBFBF;
+  display: inline-block;
+  margin-right: 28px;
+}
+
+// ==========================================================
+// NEW RECIPES
+// ==========================================================
+
+.new-recipe-container {
+  outline: solid red 1px;
+  width: 50%;
+  height: 1000px;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  margin: 120px 0 0 450px;
+}
+
+.new-recipe-header {
+  outline: solid red 1px;
+  height: 50px;
+}
+
+.new-recipe-header h2 {
+  margin: 0;
+  display: inline-block;
+  color: #979797;
+  font-family: $font2;
+}
+
+.new-recipe-header div {
+  width: 591px;
+  border: solid #D2D2D2 1px;
+  display: inline-block;
+  position: absolute;
+  top: 17px;
+  margin-left: 3px;
+}
+
+.add-photo {
+  height: 200px;
+  width: 200px;
+  background: #BFBFBF;
+  border-radius: 3px;
+  text-align: center;
+  display: inline-block;
+}
+
+.image-plus {
+  position: absolute;
+  font-size: 180px;
+  vertical-align: middle;
+  top: 30px;
+  left: 45px;
+  color: #5E5E5E;
+
+}
+
+.image-text {
+  position: absolute;
+  font-size: 25px;
+  left: 45px;
+  top: 210px;
+  font-family: $font1;
+  color: #5E5E5E;
+}
+
+.recipe-name {
+  position: absolute;
+  height: 50px;
+  width: 470px;
+  right: 0;
+  border-radius: 3px;
+  background: #F0F0F0;
+  border: solid #B0B0B0 1px;
+}
+
+.recipe-name::-webkit-input-placeholder {
+  color: #656565;
+  padding-left: 5px;
+  font-family: $font1;
+}
+
+.by {
+  position: absolute;
+  top: 120px;
+  height: 50px;
+  width: 470px;
+  right: 0;
+  border-radius: 3px;
+  background: #F0F0F0;
+  border: solid #B0B0B0 1px;
+}
+
+.by::-webkit-input-placeholder {
+  color: #656565;
+  padding-left: 5px;
+  font-family: $font1;
+}
+
+.checkboxes {
+  display: inline-block;
+  position: absolute;
+  top: 200px;
+  left: 240px;
+  font-size: 20px;
+  width: 400px;
+
+}
+
+.checkboxes input {
+  height: 20px;
+  width: 20px;
+}
+
+.checkboxes span {
+  font-family: $font1;
+  color: #CFCFCF;
+}
+
+.basic-recipe-info {
+  margin-top: 20px;
+}
+
+.prep-time {
+  width: 180px;
+  margin-left: 4px;
+  border-radius: 3px;
+  background: #F0F0F0;
+  border: solid #B0B0B0 1px;
+}
+
+.prep-time::-webkit-input-placeholder {
+  color: #656565;
+  padding-left: 5px;
+  font-family: $font1;
+}
+
+.cook-time {
+  width: 180px;
+  margin-left: 5px;
+  border-radius: 3px;
+  background: #F0F0F0;
+  border: solid #B0B0B0 1px;
+}
+
+.cook-time::-webkit-input-placeholder {
+  color: #656565;
+  padding-left: 5px;
+  font-family: $font1;
+}
+
+.cook-temp {
+  width: 180px;
+  margin-left: 5px;
+  border-radius: 3px;
+  background: #F0F0F0;
+  border: solid #B0B0B0 1px;
+}
+
+.cook-temp::-webkit-input-placeholder {
+  color: #656565;
+  padding-left: 5px;
+  font-family: $font1;
+}
+
+.this-recipe {
+  margin-top: 20px;
+}
+
+.this-recipe-text {
+  display: inline-block;
+  font-family: $font1;
+  font-size: 20px;
+  color: #979797;
+}
+
+.amount {
+  margin-left: 10px;
+  width: 100px;
+  border-radius: 3px;
+  background: #F0F0F0;
+  border: solid #B0B0B0 1px;
+}
+
+.amount::-webkit-input-placeholder {
+  color: #656565;
+  padding-left: 5px;
+  font-family: $font1;
+}
+
+.amount-of {
+  width: 400px;
+  margin-left: 15px;
+  border-radius: 3px;
+  background: #F0F0F0;
+  border: solid #B0B0B0 1px;
+}
+
+.amount-of::-webkit-input-placeholder {
+  color: #656565;
+  padding-left: 5px;
+  font-family: $font1;
+}
+
+.steps {
+  outline: solid red 1px;
+}
+
+.steps-header {
+  display: inline-block;
+  font-family: $font2;
+  font-size: 20px;
+  color: #979797;
+}
+
+.steps-header div {
+  position: absolute;
+  display: inline-block;
+  width: 628px;
+  border: solid #D2D2D2 1px;
+  top: 385px;
+  left: 80px;
+}
+
+.personal-notes h2{
+  font-family: $font2;
+  font-size: 27px;
+  color: #979797;
+  display: inline-block;
+}
+
+.personal-notes div {
+  position: absolute;
+  display: inline-block;
+  width: 514px;
+  border: solid #D2D2D2 1px;
+  margin-top: 40px;
+}
+
+.personal-notes textarea {
+  position: absolute;
+  margin: 60px 0 0 4px;
+  left: 0;
+  width: 700px;
+  height: 200px;
+  background: #F0F0F0;
+  border-radius: 3px;
+  border: solid #B0B0B0 1px;
+}
+
+.save-recipe {
+  position: absolute;
+  top: 630px;
+  left: 500px;
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  font-family: $font1;
+  outline: none;
+  border-radius: 3px;
+  border: solid #B0B0B0 2px;
+}
+
+.save-recipe:hover {
+  color: #F0F0F0;
+  background: black;
+}
