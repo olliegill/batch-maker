@@ -25,22 +25,24 @@
     <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900' rel='stylesheet' type='text/css'>
   </head>
   <body>
+  <!-- <script type="text/x-handlebars"> -->
     <header>
       <h4>The kitchen is yours, chef!</h4>
       <h1>BATCH MAKER</h1>
     </header>
 
-    <div class="sidebar">
-      <a href=""><h4>My Recipes</h4></a>
-        <div class="dividers"></div>
-      <a href=""><h4>Public <br/>Recipes</h4></a>
-        <div class="dividers"></div>
-      <a href=""><h4>Popular <br/>Recipes</h4></a>
-        <div class="dividers"></div>
-      <a href=""><h4>My Favourite Recipes</h4></a>
-        <div class="dividers"></div>
-      <a href=""><h4>My Pantry</h4></a>
-    </div>
+     <div class="sidebar">
+  <!-- {{#link-to 'recipes/create'}} --><h4>My Recipes</h4><!-- {{/link-to}} -->
+    <div class="dividers"></div>
+     <a href=""><h4>Public <br/>Recipes</h4></a>
+    <div class="dividers"></div>
+     <a href=""><h4>Popular <br/>Recipes</h4></a>
+    <div class="dividers"></div>
+     <a href=""><h4>My Favourite Recipes</h4></a>
+    <div class="dividers"></div>
+     <a href=""><h4>My Pantry</h4></a>
+     </div>
+   <!-- </script> -->
 
     <!--APPLICATION TEMPLATE -->
 
@@ -50,13 +52,15 @@
 
     <!-- HOME PAGE -->
 
-    <script type="text/x-handlebars" data-template-name="home">
+    <script type="text/x-handlebars" data-template-name="index">
+
       <div class="home-my-recipes">
         <h4 class="home-titles">My Recipes</h4>
         <div class="home-divider"></div>
         <div class="view-all">View all <span>&#10095</span></div>
 
         <ul class="my-recipes-ul">
+
           <li></li>
           <li></li>
           <li></li>
@@ -124,8 +128,9 @@
     </script>
 
     <!-- NEW RECIPE TEMPLATE -->
-<!--     <script type="text/x-handlebars" data-template-name="new-recipe">
- -->    <div class="new-recipe-container">
+
+    <script type="text/x-handlebars" data-template-name="recipes">
+     <div class="new-recipe-container">
       <div class="new-recipe-header">
         <h2>Basic Info</h2>
         <div></div>
@@ -136,35 +141,40 @@
         <div class="image-text">Add Photo</div>
       </div>
 
-      <input class="recipe-name" type="text" placeholder="Recipe Name">
-      <input class="by" type="text" placeholder="By">
+      {{input class="recipe-name" type="text" value=title placeholder="Recipe Name"}}
+      {{input class="by" type="text" value=username placeholder="By"}}
 
       <div class="checkboxes">
-        <input type="checkbox"><span>Make it Public</span>
-        <input type="checkbox"><span>Keep it Private</span>
+        {{input type="checkbox" name="makePrivate" checked=isPrivate}}
+          <span>Keep it Private</span>
+        {{input type="checkbox" name="makePublic" checked=isPublic}}
+          <span>Make it Public</span>
       </div>
 
       <div class="basic-recipe-info">
-        <select class="recipe-type">
-          <option value="">Breakfast</option>
-          <option value="">Lunch</option>
-          <option value="">Dinner</option>
-          <option value="">Dessert</option>
-        </select>
 
-        <input type="text" class="prep-time" placeholder="Prep Time">
-        <input type="text" class="cook-time" placeholder="Cook Time">
-        <input type="text" class="cook-temp" placeholder="Cook Temp">
-        <select class="temp">
-          <option value="">&degF</option>
-          <option value="">&degC</option>
-        </select>
+        {{view Ember.Select
+          content=recipeType
+          prompt='Recipe Type'
+          value=selectedType
+          class="recipe-type"
+      }}
+
+        {{input type="text" class="prep-time" value=prepTime placeholder="Prep Time"}}
+        {{input type="text" class="cook-time" value=cookTime placeholder="Cook Time"}}
+        {{input type="text" class="cook-temp" value=cookTemp placeholder="Cook Temp"}}
+
+        {{view Ember.Select
+          content=tempType
+          prompt='Temp'
+          value=selectedTemp
+          class="temp"}}
       </div>
 
       <div class="this-recipe">
         <div class="this-recipe-text">This recipe will make</div>
-        <input type="text" class="amount" placeholder="Amount">
-        <input type="text" class="amount-of" placeholder="cookies, loaves, etc">
+        {{input type="text" class="amount" value=amount placeholder="Amount"}}
+        {{input type="text" class="amount-of" value=foodType placeholder="cookies, loaves, etc"}}
       </div>
 
       <div class="steps">
@@ -172,22 +182,41 @@
           <h2>Steps</h2>
           <div></div>
         </div>
-
-        <textarea></textarea>
+        {{textarea type="text" value=steps placeholder="Insert steps"}}
       </div>
 
       <div class="personal-notes">
         <h2>Personal Notes</h2>
         <div></div>
 
-        <textarea></textarea>
+        {{textarea type="text" value=personalNotes placeholder="Insert notes"}}
       </div>
 
-      <button class="save-recipe">Save This Recipe!</button>
+      <button {{action "createRecipe"}} class="save-recipe">Save This Recipe!</button>
 
     </div>
-<!--     </script>
- -->
+    </script>
+
+
+    <!-- SHOW RECIPES TEMPLATE -->
+
+     <script type="text/x-handlebars" data-template-name="showRecipe">
+      <h1 class="each-recipe-header">Recipe Name</h1>
+
+     </script>
+
+     <!-- LOGIN TEMPLATE -->
+
+     <script type='text/x-handlebars' data-template-name='login'>
+      <div class="login-container">
+       <span>Login</span>
+       <form>
+       {{input type='text' value=username placeholder='User Name'}}
+       {{input type='password' value=password placeholder='Password'}}
+       <button {{action "logIn"}}>Log in</button>
+       </form>
+      </div>
+     </script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -195,7 +224,7 @@
     <script src="../bower_components/handlebars/handlebars.js"></script>
     <script src="../bower_components/ember/ember.js"></script>
     <script src="../bower_components/firebase/firebase.js"></script>
-    <script src="../bower_components/ember-data/index.js"></script>
+    <script src="../bower_components/ember-data/ember-data.js"></script>
     <script src="../bower_components/emberfire/dist/emberfire.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -203,7 +232,16 @@
         <!-- build:js scripts/main.js -->
         <script src="js/application.js"></script>
         <script src="js/router.js"></script>
-        <script src="js/models.js"></script>
+        <script src="js/models/user_model.js"></script>
+        <script src="js/models/recipe_model.js"></script>
+        <script src="js/models/ingredients_model.js"></script>
+        <script src="js/models/show_recipe.js"></script>
+        <script src="js/controllers/index_controller.js"></script>
+        <script src="js/controllers/recipe_controller.js"></script>
+        <script src="js/controllers/application_controller.js"></script>
+        <script src="js/controllers/show_recipes_controller.js"></script>
+        <script src="js/controllers/login_controller.js"></script>
+        <script src="js/models/login_model.js"></script>
         <!-- endbuild -->
 </body>
 </html>

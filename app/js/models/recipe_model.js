@@ -1,14 +1,7 @@
-App.User = DS.model.extend({
-  username: DS.attr('string'),
-  firstName: DS.attr('string'),
-  lastName: DS.attr('string'),
-  recipes: DS.hasMany('recipe')
-});
-
-App.Recipe = DS.model.extend({
+App.Recipe = DS.Model.extend({
   image: DS.attr('string'),
   title: DS.attr('string'),
-  author: DS.hasProperty('username'),
+  author: DS.belongsTo('user'),
   makePublic: DS.attr('boolean'),
   makePrivate: DS.attr('boolean'),
   recipeType: DS.attr('string'),
@@ -17,6 +10,8 @@ App.Recipe = DS.model.extend({
   cookTemp: DS.attr('number'),
   tempType: DS.attr('string'),
   amount: DS.attr('number'),
-  foodType: DS.attr('string')
+  foodType: DS.attr('string'),
+  steps: DS.attr('string'),
+  personalNotes: DS.attr('string'),
 
 });
